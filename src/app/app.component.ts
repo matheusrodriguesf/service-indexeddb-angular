@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EstadosService } from './estados.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-indexeddb-service';
+  constructor(protected estadosService: EstadosService) {
+    estadosService.getEstados();
+  }
 }
